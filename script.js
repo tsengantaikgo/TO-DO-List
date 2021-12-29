@@ -67,20 +67,18 @@ function onAndOff(event) {
         event.target.classList.toggle("done");
     }
 }
+
 enterButton.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterPress);
-list.addEventListener("click", onAndOff); // FOR INI 
+list.addEventListener("click", onAndOff);
 
 
 
-//2. Add buttons next to each list item to delete the item when clicked on its corresponding delete button.
+//- for loop to add eventlististener to listItem[i] is not working
+//listItem[i] will be undifined when you clicked
+//It because the event handler will be called some time after the loop has completed,
+//so the variable i has a value that points outside the listItem array.
 
-
-//1. If you click on the list item, it toggles the .done  class on and off.
-//- for loop to add eventlististener  not working  listItem[i] will be undifined
-//- use wrapped function
+//- Wrap the code in a function, to create a scope where you have a copy of the variable
 //- event.target
-//- this
 
-
-//3. BONUS: When adding a new list item, it automatically adds the delete button next to it (hint: be sure to check if new items are clickable too!)
